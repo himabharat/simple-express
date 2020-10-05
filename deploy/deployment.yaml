@@ -17,6 +17,7 @@ spec:
       containers:
       - name: simple-express
         image: himabharat/simple-express
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080
         livenessProbe:
