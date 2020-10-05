@@ -1,21 +1,18 @@
-apiVersion: apps/v1
+apiVersion: extensions/v1
 kind: Deployment
 metadata:
-  name: my-app-2
   labels:
-    app: my-app-2
+      service: reverseproxyhima
+    name: reverseproxyhima
 spec:
   replicas: 1
-  selector:
-    matchLabels:
-      app: my-app-2
   template:
     metadata:
       labels:
-        app: my-app-2
+        service: reverseproxyhima
     spec:
       containers:
-      - name: simple-express
+      - name: reverseproxyhima
         image: himabharat/simple-express
         imagePullPolicy: Always
         ports:
